@@ -1,0 +1,177 @@
+
+ /* style.css */
+ /* --- 基礎設定 --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('room.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- 全螢幕選單 (index.html 用) --- */
+
+/* 拿掉動畫，直接讓信件顯示在中間 */
+
+
+/* 隱藏或刪除原本的 mailbox，如果你不需要的話 */
+.mailbox {
+    display: none; 
+}
+
+/* 刪除或註解掉原本的 @keyframes flyOut { ... } */
+
+
+.mailbox {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 200px;
+    z-index: 10;
+}
+
+
+.mail-content {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #ff75a0;
+}
+
+.start-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ff75a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 117, 160, 0.4);
+}
+
+/* --- 遊戲畫面 (wenin.html 用) --- */
+#character-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85vh;
+    width: auto;
+    z-index: 1;
+}
+
+.dialog-box {
+    width: 80%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #ff75a0;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 117, 160, 0.4);
+    font-family: "Microsoft JhengHei", sans-serif;
+    position: absolute;
+    bottom: 30px; /* 修正位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#name-tag {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    background: #ff75a0;
+    padding: 5px 15px;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+}
+#start-menu {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffeef2;
+}
+
+/* 角色：放在中間偏上的位置 */
+.leaning-character {
+    position: absolute;
+    left: px;
+    width: 450px;       /* 根據你的圖片調整大小 */
+    z-index: 2;         /* 數字比信件大，才會壓在上面 */
+    /* 調整垂直位置，讓手肘剛好對準信件邊緣 */
+    pointer-events: none; /* 讓滑鼠可以穿透圖片點擊到下面的按鈕 */
+}
+
+/* 信件：放在角色下方一點 */
+.mail-envelope {
+    position: relative;
+    width: 350px;
+    padding: 60px 20px 20px 20px; /* 增加頂部內距，避免文字被角色壓住 */
+    background: white;
+    border: 3px solid #ff75a0;
+    border-radius: 15px;
+    z-index: 1;         /* 在角色下面 */
+    margin-top: 100px;  /* 往下推，讓角色手肘對準邊界 */
+}
+#mail-overlay {
+    position: fixed; /* Or absolute, depending on your setup */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    color: #fffefe; /* Keep your pink text color */
+    padding: 20px;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+    z-index: 1000; /* Ensures it stays on top of everything */
+    width: 80%;
+    max-width: 500px;
+}
+#mail-style {
+    display: none; /* 初始隱藏 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white; /* 確保文字是白的 */
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 9999;
+    text-align: center;
+    width: 80%; /* 依需求調整寬度 */
+}
+.option-btn {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 25px; /* Rounded pill shape */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Smooth animation */
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    outline: none;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px); /* Subtle lift */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.option-btn:active {
+    transform: translateY(0); /* Press down effect */
+}
+

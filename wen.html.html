@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Archive</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  
+
+   <div id="start-menu">
+    <!-- 角色圖 -->
+    <img src="male.png" class="leaning-character">
+
+    <!-- 信件/對話框 -->
+    <div class="mail-envelope">
+        <div class="mail-content">
+            <h2>Dear Player</h2>
+            <button class="start-btn" onclick="startGame()">START</button>
+        </div>
+    </div>
+</div>
+
+
+    <!-- 遊戲跳轉邏輯 -->
+    <script>
+        function startGame() {
+            const menu = document.getElementById('start-menu');
+            // 加上淡出效果
+            menu.style.transition = "opacity 1s";
+            menu.style.opacity = "0";
+            
+            setTimeout(() => {
+                window.location.href = 'wenin.html'; 
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
