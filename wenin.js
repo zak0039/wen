@@ -17,7 +17,7 @@ const script = {
     },
     nospeaking: {
         msg: "（看著我。除了我以外，沒有人能讓你露出這種表情。如果你是因為別人不開心，那我就去解決掉那個源頭；如果是因為我...（低頭靠近耳邊）那就在床上哭給我看，不准對著外面流眼淚。",
-        options: [{ text: "（默默點頭）", next: "ask_zeze" },
+        options: [{ text: "（默默點頭）", next: "closer" },
                 { text: "（低頭不語）", next: "ask_zeze" }
         ]
     },
